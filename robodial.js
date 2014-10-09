@@ -1,7 +1,8 @@
 // This script is going to run every day at a certain time.
 
 // Twilio related stuff.
-var client = require('twilio')(process.env.TWILIO_ASID, process.env.TWILIO_AUTH_TOKEN);
+var client = require('twilio')(process.env.TWILIO_ASID,
+  process.env.TWILIO_AUTH_TOKEN);
 var twilio_number = process.env.TWILIO_NUMBER;
 
 // Verizon phone numbers.
@@ -24,10 +25,12 @@ var targets = [
 // Loop through and call everyone.
 targets.map(function(number) {
   client.calls.create({
-    url: "/doyouhaveaniphone6plus",
+    url: "http://robodialer.herokuapp.com/doyouhaveaniphone6plus",
     to: number,
     from: twilio_number
   }, function(err, call) {
-    console.log(err);
+    if (err)
+      console.log(err);
+    console.log(call);
   });
 });
