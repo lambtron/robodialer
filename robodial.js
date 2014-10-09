@@ -29,6 +29,8 @@ targets.map(function(number) {
     to: number,
     from: twilio_number
   }, function(err, call) {
-    console.log(err);
+    if (err)
+      console.log(err);
+    console.log(call);
   });
 });
