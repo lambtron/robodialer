@@ -1,7 +1,8 @@
 // This script is going to run every day at a certain time.
 
 // Twilio related stuff.
-var client = require('twilio')(process.env.TWILIO_ASID, process.env.TWILIO_AUTH_TOKEN);
+var client = require('twilio')(process.env.TWILIO_ASID,
+  process.env.TWILIO_AUTH_TOKEN);
 var twilio_number = process.env.TWILIO_NUMBER;
 
 // Verizon phone numbers.
