@@ -8,11 +8,6 @@ var server = http.createServer(app);
 var port = process.env.PORT || 3000;
 var twimlBuilder = require('twilio');
 
-var settings = {          // twilio settings.
-  voice: 'woman',
-  language: 'en-US'
-};
-
 // Set environmental variables. ================================================
 if (!process.env.TWILIO_ASID)
   require('./config/config');
