@@ -25,7 +25,7 @@ var targets = [
 // Loop through and call everyone.
 targets.map(function(number) {
   client.calls.create({
-    url: "/doyouhaveaniphone6plus",
+    url: "http://robodial.herokuapp.com/doyouhaveaniphone6plus",
     to: number,
     from: twilio_number
   }, function(err, call) {
